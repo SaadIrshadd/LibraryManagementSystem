@@ -1,4 +1,4 @@
-alter procedure sp_UserLogin
+create procedure sp_UserLogin
 (
 @member_id [nvarchar](50),
 @password [nvarchar](50)
@@ -137,7 +137,7 @@ select max(publisher_id)as ID from publisher_master_tbl;
 
 
 -------------
-alter procedure sp_UpdatePublisher
+create procedure sp_UpdatePublisher
 (
 @id nchar(10),
 @name nvarchar(50)
@@ -149,7 +149,7 @@ end
 go
 
 -------------
-alter procedure sp_AddPublisher
+create procedure sp_AddPublisher
 (
 @id nchar(10),
 @name nvarchar(50)
@@ -187,7 +187,7 @@ go
 
 
 ---------------
-alter procedure sp_GetMemberByID
+create procedure sp_GetMemberByID
 (
 @id nvarchar(50)
 )
@@ -226,7 +226,7 @@ as
 go
 
 ----------- 
-alter procedure sp_GetMemberAllRecord
+create procedure sp_GetMemberAllRecord
 as 
 begin
 set nocount on;
@@ -258,7 +258,7 @@ go
 ---------------
 
 ------------
-alter procedure sp_DeleteMember
+create procedure sp_DeleteMember
 (
 @member_id int
 )
@@ -272,7 +272,7 @@ go
 
 
 -----------------
-alter procedure sp_Insert_Update_DeleteBookInventory
+create procedure sp_Insert_Update_DeleteBookInventory
 (
 @book_id nchar(10)=null,
 @book_name nvarchar(max)=null,
@@ -370,7 +370,7 @@ begin
 Go
 
 ---------------
-alter procedure sp_GetBookByID
+create procedure sp_GetBookByID
 (
 @book_id nchar(10)
 )
@@ -398,7 +398,7 @@ go
 
 
 ----------
-alter procedure sp_ChechkBookStock
+create procedure sp_ChechkBookStock
 (
 @book_id nchar(10)=null
 )
@@ -412,7 +412,7 @@ go
 
 
 --------------
-alter procedure sp_checkIssue
+create procedure sp_checkIssue
 (
 @member_id nchar(10),
 @book_id nchar(10)
@@ -493,7 +493,7 @@ end
 go
 
 
-alter table BookFineRecord
+create table BookFineRecord
 (
 RecordID int identity(1,1)Primary Key,
 book_id nvarchar(50) not null,
@@ -517,7 +517,7 @@ cvv nvarchar(50)
 
 -------------------- 
 
-alter procedure sp_fine
+create procedure sp_fine
 (
 @book_id nvarchar(50) ,
 @member_id nvarchar(50),
@@ -548,7 +548,7 @@ end
 go
 
 ----------------
-alter procedure sp_getMemberProfileByID
+create procedure sp_getMemberProfileByID
 (
 @member_id nvarchar(50)
 )
@@ -596,7 +596,7 @@ end
 go
 
 ------------
-alter procedure sp_FineDetails
+create procedure sp_FineDetails
 (
 @member_id nvarchar(50)
 )
